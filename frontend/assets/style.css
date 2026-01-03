@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+ 
+}
+.header{
+  background: #2c3e50;
+  color: #fff;
+  padding: 1rem 0;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 1000px;
+  
+}
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo h1{
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;  
+}
+.logo tagline{
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+.nav-links{
+  display: flex;
+  list-style: none;
+  gap:2rem;
+}
+.nav-links a{
+text-decoration: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease
+}
+.nav-links a:hover{
+  background: #2e333c;
+}
+.hero{
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/38570/lamborghini-car-speed-prestige-38570.jpeg') center/cover;
+  background-image: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+    
+}
