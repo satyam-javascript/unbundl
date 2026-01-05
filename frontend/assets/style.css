@@ -1,4 +1,4 @@
-*{
+ *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,12 +11,24 @@ body{
 
 .container{
   max-width: 1200px;
-  margin: 0 auto;
+  /* margin: 0 auto; */ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container{
+  max-width: 1200px;
+  /* margin: 0 auto; */
   padding: 0 20px;
- 
 }
 .header{
-  background: #2c3e50;
+  background: #20272e;
   color: #fff;
   padding: 1rem 0;
   position: fixed;
@@ -66,4 +78,181 @@ text-decoration: none;
   color: #fff;
   text-align: center;
     
+}
+
+.hero h2{
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight:300;
+  letter-spacing:2px;
+}
+.hero p{
+  
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width:600px;
+}
+.hero-button{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+            }
+.btn{
+  padding:1rem 2rem ;
+  text-decoration:none;
+  border-radius:4px;
+  font-weight:bold;
+  transition:all .3s ease;
+  display:inline-block;
+}
+.btn-primary{
+  background:#e74c3c;
+  color:#fff;
+}
+.btn-primary:hover{
+  background:#c0392b;
+  transform:translateY(-2px);
+}
+.btn-secondery{
+  background:transparent;
+  color:#fff;
+  border:2px solid #fff;
+}
+.btn-secondery:hover{
+  background:#fff;
+  color:#2c3e50;
+}
+
+.products-menu{
+      background: #56626e;
+      color: #fff;
+      display:flex;
+      justify-content:space-between;
+      align-content:center;
+      text-align:center;
+      align-items: center;
+}
+  padding: 0 20px;
+ 
+}
+.header{
+  background: #20272e;
+  color: #fff;
+  padding: 1rem 0;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 1000px;
+  
+}
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo h1{
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;  
+}
+.logo tagline{
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+.nav-links{
+  display: flex;
+  list-style: none;
+  gap:2rem;
+}
+.nav-links a{
+text-decoration: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease
+}
+.nav-links a:hover{
+  background: #2e333c;
+}
+.hero{
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/38570/lamborghini-car-speed-prestige-38570.jpeg') center/cover;
+  background-image: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+    
+}
+
+.hero h2{
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight:300;
+  letter-spacing:2px;
+}
+.hero p{
+  
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width:600px;
+}
+.hero-button{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+            }
+.btn{
+  padding:1rem 2rem ;
+  text-decoration:none;
+  border-radius:4px;
+  font-weight:bold;
+  transition:all .3s ease;
+  display:inline-block;
+}
+.btn-primary{
+  background:#e74c3c;
+  color:#fff;
+}
+.btn-primary:hover{
+  background:#c0392b;
+  transform:translateY(-2px);
+}
+.btn-secondery{
+  background:transparent;
+  color:#fff;
+  border:2px solid #fff;
+}
+.btn-secondery:hover{
+  background:#fff;
+  color:#2c3e50;
+}
+
+.products-menu{
+      background: #56626e;
+    color: #fff;
+    display:flex;
+    justify-content:space-between;
+    align-content:center;
+    text-align:center;
+        align-items: center;
+}
+
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 350px;
+}
+.product-content{
+ display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 300px 100px;
 }

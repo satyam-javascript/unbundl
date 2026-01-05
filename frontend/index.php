@@ -35,6 +35,43 @@
                 </div>
             </div>
         </section>
+
+        <section id="products" class="products-section">
+            <div class="products-menu">
+                    <div class="product-range">
+                          <label for="vol">Range :</label>
+                        <input type="range" id="vol" name="vol" min="1" max="80">
+                    </div>
+                   
+            <div class="container">
+                        <nav class="navbar">
+                        <ul class="nav-links">
+                        <li>
+<input type="checkbox" id="myCheckbox" onchange="handleCheck(this)" value="suv">
+                        <a onclick="Getproduct(this.id)" id="suv" href="#suv">SUV</a></li>
+                        <li>
+                           <input type="checkbox" id="myCheckbox" onchange="handleCheck(this)" value="hatchback">
+                            <a onclick="Getproduct(this.id)" id="hatchback" href="#hatchback">Hatchback</a></li>
+                        <li>
+                            <input type="checkbox" id="myCheckbox" onchange="handleCheck(this)" value="sedan">
+                            <a onclick="Getproduct(this.id)" id="sedan" href="#sedan">Sedan</a></li>
+
+                        </ul>
+                        </nav>
+             </div>
+ <div class="product-query-form">
+                        <button class="btn btn-secondery">Submit</button>
+                    </div>
+            </div>
+            <div class="product-content">
+                <!-- card-product api (frontendapi.php) -->
+                      
+                    
+            </div>
+        </section>
+
+
     </main>
 </body>
+<script src="./assets/script.js" type="text/javascript"></script>
 </html>
