@@ -39,8 +39,9 @@
         <section id="products" class="products-section">
             <div class="products-menu">
                     <div class="product-range">
-                          <label for="vol">Range :</label>
-                        <input type="range" id="vol" name="vol" min="1" max="80">
+                          <label for="volumeSlider">Price : <output id="valueOutput">3</output></label>
+                       <input onchange="VolumeSlider(this)" type="range" id="volumeSlider" min="1" max="100" value="3">
+
                     </div>
                    
             <div class="container">
@@ -60,7 +61,7 @@
                         </nav>
              </div>
  <div class="product-query-form">
-                        <button class="btn btn-secondery">Submit</button>
+                        <button class="btn btn-secondery" onclick="Model()">Submit</button>
                     </div>
             </div>
             <div class="product-content">
@@ -73,5 +74,22 @@
 
     </main>
 </body>
+<model class="model">
+<div class="model-main">
+    <div class="model-header">
+        <h3>Submit your Responce</h3>
+    </div>
+    <div class="model-content">
+      <div class="fields"> <label for="username">Name:</label><input type="text" id="username"/></div>
+       <div class="fields"><label for="phone">Phone:</label><input type="text" id="phone"/></div>
+       <div class="fields"><label for="email">Email Id:</label><input type="text" id="email"/></div>
+       <div class="fields"><label for="address">Address:</label><input type="text" id="address"/></div>
+        <div class="fields sendbutton">
+          <button class="btn btn-form" onclick="FromSend()">Send</button>
+         </div>
+    </div>
+
+</div>
+</model>
 <script src="./assets/script.js" type="text/javascript"></script>
 </html>

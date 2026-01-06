@@ -11,7 +11,15 @@ $input = json_decode(file_get_contents('php://input'), true);
 
 switch ($method) {
     case 'GET':
-        if(isset($_GET['range'])){
+        if(isset($_GET['searched'])){
+             $searched = "searched";
+        handleGet($conn,$searched);
+        }
+        elseif(isset($_GET['latest'])){ 
+            $latest = "latest";
+        handleGet($conn,$latest);
+        }
+        elseif(isset($_GET['range'])){
             $range = $_GET['range'];
             if(isset($_GET['categoryAll'])){
             $categoryAll = $_GET['categoryAll'];
@@ -51,7 +59,13 @@ switch ($method) {
 function handleGet($conn,$category) {
             $sql = "SELECT * FROM products";
             if($category !=""){
+                if($category == "latest"){
+                    $sql .= " ORDER BY id DESC LIMIT 9";
+                }elseif($category == "searched"){
+                 $sql = "SELECT  * FROM  products  WHERE searchcount > 1 GROUP BY searchcount ORDER BY id DESC LIMIT 9";
+                }else{
                 $sql .= " WHERE `category` $category";
+                }
             }
             $result = mysqli_query($conn, $sql);
 

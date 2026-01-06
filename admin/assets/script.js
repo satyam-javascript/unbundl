@@ -4,15 +4,21 @@ async function fetchData(url) {
  return data;
 }
 
-fetchData("http://localhost/unbundl/backend/frontendapi.php")
+fetchData("http://localhost/unbundl/backend/backendapi.php?searched=true")
 .then((data)=>{
-CardProduct(data)
+CardProduct(data,".searched-content")
+})
+
+fetchData("http://localhost/unbundl/backend/backendapi.php?latest=true")
+.then((data)=>{
+CardProduct(data,".latestcar-content")
 })
 
 function Getproduct(id){
-fetchData(`http://localhost/unbundl/backend/frontendapi.php?category=${id}`)
+fetchData(`http://localhost/unbundl/backend/backendapi.php?category=${id}`)
 .then(data=>{
- CardProduct(data)
+CardProduct(data,".searched-content")
+    
 }) 
 }
 
@@ -26,9 +32,10 @@ document.querySelectorAll('.nav-links input').forEach(i=>{
 })
   
    const categoryAll = category.join();
-fetchData(`http://localhost/unbundl/backend/frontendapi.php?categoryAll=${categoryAll}`)
+fetchData(`http://localhost/unbundl/backend/backendapi.php?categoryAll=${categoryAll}`)
 .then(data=>{
-   CardProduct(data)
+CardProduct(data,".searched-content")
+    
 })
 }
 
@@ -45,19 +52,20 @@ console.log(Value.value)
   
    const categoryAll = category.join();
 
-fetchData(`http://localhost/unbundl/backend/frontendapi.php?range=${Value.value}${categoryAll && "&categoryAll="+categoryAll}`)
+fetchData(`http://localhost/unbundl/backend/backendapi.php?range=${Value.value}${categoryAll && "&categoryAll="+categoryAll}`)
 .then(data=>{
-   CardProduct(data)
+CardProduct(data,".searched-content")
+    
 })
 
 }
 
 
-function CardProduct(data){
- this.document.querySelector('.product-content').innerHTML="";
+function CardProduct(data,elementSelect){
+ this.document.querySelector(""+elementSelect+"").innerHTML="";
     if(!data.status) {
      data.forEach(element => {
- this.document.querySelector('.product-content').innerHTML+=`
+ this.document.querySelector(""+elementSelect+"").innerHTML+=`
                         <div class="card-product">
                         <div class="car-image">
                         <img src="${element.image}" alt="">
@@ -73,7 +81,7 @@ function CardProduct(data){
     `;
 })
 }else{
-    this.document.querySelector('.product-content').innerHTML+=`<h2>Car Not Found! </h2>`
+    this.document.querySelector(""+elementSelect+"").innerHTML+=`<h2>Car Not Found! </h2>`
         return ;
 }
 }
