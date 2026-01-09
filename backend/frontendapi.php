@@ -9,6 +9,7 @@ include "db.php";
 $method = $_SERVER['REQUEST_METHOD'];
 $input = json_decode(file_get_contents('php://input'), true);
 
+
 switch ($method) {
     case 'GET':
         if(isset($_GET['range'])){
@@ -35,13 +36,13 @@ switch ($method) {
        
         break;
     case 'POST':
-        handlePost($pdo, $input);
+        handlePost($conn, $input);
         break;
     case 'PUT':
-        handlePut($pdo, $input);
+        handlePut($conn, $input);
         break;
     case 'DELETE':
-        handleDelete($pdo, $input);
+        handleDelete($conn, $input);
         break;
     default:
         echo json_encode(['message' => 'Invalid request method']);
@@ -119,11 +120,23 @@ function handleGetAll($conn,$categoryAll,$range) {
     
 }
 
-function handlePost($pdo, $input) {
-    $sql = "INSERT INTO users (name, email) VALUES (:name, :email)";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute(['name' => $input['name'], 'email' => $input['email']]);
-    echo json_encode(['message' => 'User created successfully']);
+function handlePost($conn, $input) {  
+    $username = $input['username'];
+    $email = $input['email'];
+    $phone = $input['phone'];
+    $address = $input['address'];
+    $category = implode(",", $input['categories']);
+    $sql = "INSERT INTO user (username, email, phone, address, category)
+    VALUES ('$username', '$email', '$phone', '$address', '$category')";
+    $result = mysqli_query($conn, $sql);
+    if ($result === FALSE) {
+        echo json_encode(["status"=>400,"message"=>"Data Not Found"]);
+    }
+    else {
+        $last_id = mysqli_insert_id($conn);
+         echo json_encode(['status'=>201,'userid'=>$last_id,'message' => 'Thank you!']);
+        }
+
 }
 
 function handlePut($pdo, $input) {

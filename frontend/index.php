@@ -45,19 +45,20 @@
                     </div>
                    
             <div class="container">
-                        <nav class="navbar">
-                        <ul class="nav-links">
-                        <li>
-<input type="checkbox" id="myCheckbox" onchange="handleCheck(this)" value="suv">
-                        <a onclick="Getproduct(this.id)" id="suv" href="#suv">SUV</a></li>
-                        <li>
-                           <input type="checkbox" id="myCheckbox" onchange="handleCheck(this)" value="hatchback">
-                            <a onclick="Getproduct(this.id)" id="hatchback" href="#hatchback">Hatchback</a></li>
-                        <li>
-                            <input type="checkbox" id="myCheckbox" onchange="handleCheck(this)" value="sedan">
-                            <a onclick="Getproduct(this.id)" id="sedan" href="#sedan">Sedan</a></li>
-
-                        </ul>
+           <nav class="navbar">
+            
+           <ul class="nav-links">
+            <li>
+            <input type="checkbox" id="myCheckbox" onchange="handleCheck(this)" value="suv">
+            <a onclick="Getproduct(this.id)" id="suv" href="#suv">SUV</a></li>
+            <li>
+            <input type="checkbox" id="myCheckbox" onchange="handleCheck(this)" value="hatchback">
+            <a onclick="Getproduct(this.id)" id="hatchback" href="#hatchback">Hatchback</a></li>
+            <li>
+            <input type="checkbox" id="myCheckbox" onchange="handleCheck(this)" value="sedan">
+            <a onclick="Getproduct(this.id)" id="sedan" href="#sedan">Sedan</a></li>
+            </ul>
+            
                         </nav>
              </div>
  <div class="product-query-form">
@@ -73,6 +74,43 @@
 
 
     </main>
+ 
+     <footer class="footer">
+        <div class="container"></div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Cartrends</h3>
+                <p>Get the latest updates on new products and upcoming sales</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+              <div class="footer-section">
+                <h4>Opening Hours</h4>
+                <p>Monday - Thursday : 11-6 PM </p>
+                <p>Friday - Saturday : 4-6 PM </p>
+                <p>Sunday: 6-8 PM </p>
+            </div>
+             <div class="footer-section">
+                <h4>Follow Up</h4>
+                <div class="social-links">
+                    <a class="social-link" href="#links">Facebook</a>
+                    <a class="social-link" href="#links">Instagram</a>
+                    <a class="social-link" href="#links">Twitter</a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="footer-bottom">
+                <p>© 2026 Cartrends. All Rights Reserved.</p>
+            </div>
+    </footer>
 </body>
 <model class="model">
 <div class="model-main">
@@ -91,5 +129,6 @@
 
 </div>
 </model>
+
 <script src="./assets/script.js" type="text/javascript"></script>
 </html>
